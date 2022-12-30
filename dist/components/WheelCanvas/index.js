@@ -78,7 +78,7 @@ var drawWheel = function (canvasRef, data, drawWheelProps) {
     }
 };
 var WheelCanvas = function (_a) {
-    var width = _a.width, height = _a.height, data = _a.data, outerBorderColor = _a.outerBorderColor, outerBorderWidth = _a.outerBorderWidth, innerRadius = _a.innerRadius, innerBorderColor = _a.innerBorderColor, innerBorderWidth = _a.innerBorderWidth, radiusLineColor = _a.radiusLineColor, radiusLineWidth = _a.radiusLineWidth, fontSize = _a.fontSize, perpendicularText = _a.perpendicularText, textDistance = _a.textDistance;
+    var width = _a.width, height = _a.height, data = _a.data, outerBorderColor = _a.outerBorderColor, outerBorderWidth = _a.outerBorderWidth, innerRadius = _a.innerRadius, innerBorderColor = _a.innerBorderColor, innerBorderWidth = _a.innerBorderWidth, radiusLineColor = _a.radiusLineColor, radiusLineWidth = _a.radiusLineWidth, fontSize = _a.fontSize, perpendicularText = _a.perpendicularText, textDistance = _a.textDistance, fontFamily = _a.fontFamily;
     var canvasRef = createRef();
     var drawWheelProps = {
         outerBorderColor: outerBorderColor,
@@ -95,6 +95,6 @@ var WheelCanvas = function (_a) {
     useEffect(function () {
         drawWheel(canvasRef, data, drawWheelProps);
     }, [canvasRef, data, drawWheelProps]);
-    return React.createElement(WheelCanvasStyle, { ref: canvasRef, width: width, height: height });
+    return (React.createElement(WheelCanvasStyle, { ref: canvasRef, width: width, height: height, fontFamily: fontFamily }));
 };
 export default WheelCanvas;

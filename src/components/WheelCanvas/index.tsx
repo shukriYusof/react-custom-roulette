@@ -8,6 +8,7 @@ interface WheelCanvasProps extends DrawWheelProps {
   width: string;
   height: string;
   data: WheelData[];
+  fontFamily?: string;
 }
 
 interface DrawWheelProps {
@@ -164,6 +165,7 @@ const WheelCanvas = ({
   fontSize,
   perpendicularText,
   textDistance,
+  fontFamily,
 }: WheelCanvasProps): JSX.Element => {
   const canvasRef = createRef<HTMLCanvasElement>();
   const drawWheelProps = {
@@ -183,7 +185,14 @@ const WheelCanvas = ({
     drawWheel(canvasRef, data, drawWheelProps);
   }, [canvasRef, data, drawWheelProps]);
 
-  return <WheelCanvasStyle ref={canvasRef} width={width} height={height} />;
+  return (
+    <WheelCanvasStyle
+      ref={canvasRef}
+      width={width}
+      height={height}
+      fontFamily={fontFamily}
+    />
+  );
 };
 
 export default WheelCanvas;

@@ -42,6 +42,7 @@ interface Props {
   perpendicularText?: boolean;
   textDistance?: number;
   spinDuration?: number;
+  fontFamily?: string;
 }
 
 const STARTED_SPINNING = 'started-spinning';
@@ -68,6 +69,7 @@ export const Wheel = ({
   perpendicularText = false,
   textDistance = DEFAULT_TEXT_DISTANCE,
   spinDuration = DEFAULT_SPIN_DURATION,
+  fontFamily,
 }: Props): JSX.Element | null => {
   const [wheelData, setWheelData] = useState<WheelData[]>([...data]);
   const [startRotationDegrees, setStartRotationDegrees] = useState(0);
@@ -175,6 +177,7 @@ export const Wheel = ({
           fontSize={fontSize}
           perpendicularText={perpendicularText}
           textDistance={textDistance}
+          fontFamily={fontFamily}
         />
       </RotationContainer>
       <RouletteSelectorImage src={rouletteSelector.src} alt="roulette-static" />
